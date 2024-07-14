@@ -1,5 +1,8 @@
 package xyz.sina.dowr.tutorial
 
+import android.content.Context
+import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -49,6 +52,7 @@ import xyz.sina.dowr.ui.theme.Orange
 import xyz.sina.dowr.utils.Title
 import xyz.sina.dowr.utils.Txts
 
+var changeScreen : Boolean = true
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -104,7 +108,12 @@ fun Tutorial(navController: NavHostController){
                     var checked by remember{ mutableStateOf(false) }
 
                     Text(modifier = Modifier.absolutePadding(right = 20.dp),text = Txts.changeStartUpScreen, style = TextStyle(textDirection = TextDirection.Rtl))
-                    Checkbox(checked = checked, onCheckedChange = { checked = it })
+                    Checkbox(checked = checked, onCheckedChange = {
+
+                        checked = it
+                        changeScreen = it
+
+                    })
 
                 }
                 Row(Modifier.fillMaxWidth(),horizontalArrangement = Arrangement.Center){

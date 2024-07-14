@@ -1,6 +1,7 @@
 package xyz.sina.dowr.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -12,9 +13,10 @@ import xyz.sina.dowr.tutorial.Tutorial
 
 // TODO : use sharedPreference for saving next startUp screen
 @Composable
-fun Navigation(){
+fun Navigation(navController1: NavController){
     val navController : NavHostController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screens.ScreenTutorial.route){
+    NavHost(navController = navController, startDestination = Screens.ScreenStart.route){
+
         composable(Screens.ScreenMain.route){
             Main(navController)
         }
@@ -24,6 +26,7 @@ fun Navigation(){
         composable(Screens.ScreenInGame.route){
             InGameScreen()
         }
+
     }
 }
 
