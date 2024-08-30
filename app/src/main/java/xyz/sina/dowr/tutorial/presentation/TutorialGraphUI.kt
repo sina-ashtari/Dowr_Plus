@@ -1,7 +1,6 @@
 package xyz.sina.dowr.tutorial.presentation
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -10,7 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -28,7 +27,7 @@ fun TutorialGraphUI(tutorialModel: TutorialModel){
         Image(modifier = Modifier
             .fillMaxWidth()
             .padding(24.dp)
-            .background(color = Color.Transparent, shape = RoundedCornerShape(4.dp)), alignment = Alignment.Center ,painter = painterResource(id = tutorialModel.image), contentDescription = null)
+            .clip(RoundedCornerShape(10.dp)), alignment = Alignment.Center ,painter = painterResource(id = tutorialModel.image), contentDescription = null)
         Text(modifier = Modifier.fillMaxWidth(), style = TextStyle(textDirection = TextDirection.Rtl, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center),text = tutorialModel.title)
         Text(modifier = Modifier.fillMaxWidth(), style = TextStyle(textDirection = TextDirection.Rtl, textAlign = TextAlign.Justify),text = tutorialModel.description)
     }

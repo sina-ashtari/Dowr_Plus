@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,11 +25,12 @@ fun PagerIndicator(
         repeat(pageSize) {
             Box(
                 modifier = Modifier
-                    .height(16.dp)
-                    .width(width = if (it == currentPage) 24.dp else 16.dp)
+                    .height(12.dp)
+                    .width(width = if (it == currentPage) 28.dp else 12.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(color = if (it == currentPage) selectedColor else unSelectedColor)
             )
+            Spacer(modifier = Modifier.width(8.dp))
         }
     }
 }
