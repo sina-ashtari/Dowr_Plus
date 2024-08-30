@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.Dowr" parent="android:Theme.Material.Light.NoActionBar" />
+    
+    <string name="SplashTheme" parent ="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@Color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Dowr</item>
+    </string>
 </resources>
