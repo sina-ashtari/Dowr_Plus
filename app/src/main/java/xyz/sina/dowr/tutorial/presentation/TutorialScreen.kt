@@ -25,7 +25,7 @@ import xyz.sina.dowr.tutorial.data.TutorialModel
 import xyz.sina.dowr.ui.theme.DowrTheme
 
 
-@OptIn(ExperimentalFoundationApi::class)
+
 @Composable
 fun TutorialScreen(
     onFinished: () -> Unit
