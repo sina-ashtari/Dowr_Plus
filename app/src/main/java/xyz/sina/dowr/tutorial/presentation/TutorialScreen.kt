@@ -1,6 +1,5 @@
 package xyz.sina.dowr.tutorial.presentation
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
+import xyz.sina.dowr.core.persentation.ButtonUI
 import xyz.sina.dowr.tutorial.data.TutorialModel
 import xyz.sina.dowr.ui.theme.DowrTheme
 
