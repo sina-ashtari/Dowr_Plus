@@ -1,4 +1,4 @@
-package xyz.sina.dowr.tutorial.presentation
+package xyz.sina.dowr.core.persentation
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
