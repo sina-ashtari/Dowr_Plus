@@ -76,4 +76,7 @@ dependencies {
     // Navigation
     implementation(libs.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
+
+    // viewmodel inside compose
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
