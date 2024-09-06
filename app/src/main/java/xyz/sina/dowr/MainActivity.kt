@@ -25,8 +25,8 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         installSplashScreen()
+        enableEdgeToEdge()
         setContent {
             DowrTheme {
                 val navController = rememberNavController()
@@ -46,8 +46,8 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                     composable<MainPage> { MainPage(navController = navController) }
-                    composable<InGameSettings> { InGameScreen(navController = navController) }
-                    composable<InGame> { InGameSettingsScreen(navController = navController) }
+                    composable<InGameSettings> { InGameSettingsScreen(navController = navController) }
+                    composable<InGame> { InGameScreen(navController = navController) }
 
                 }
                 
