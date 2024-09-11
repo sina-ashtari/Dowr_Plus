@@ -5,8 +5,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 
 class DifficultySelectOption(
+    val id : Int,
     val option: String,
-    var initialSelectedValue : Boolean
+    initialSelectedValue : Boolean
 ){
     var selected by mutableStateOf(initialSelectedValue)
 }

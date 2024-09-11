@@ -36,13 +36,13 @@ fun CategoriesView(wordCategories: WordCategories, position : Int ,onItemClick: 
             modifier = Modifier
                 .aspectRatio(1f)
                 .clip(CircleShape)
-                .size(100.dp)
+                .size(25.dp)
                 .border(
                     width = if (wordCategories.isSelected.value) 3.dp else 0.dp,
                     color = if (wordCategories.isSelected.value) Color.Red else Color.White,
                     shape = CircleShape
                 ),
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.Fit,
             painter = painterResource(id = wordCategories.image),
             contentDescription = null
         )
