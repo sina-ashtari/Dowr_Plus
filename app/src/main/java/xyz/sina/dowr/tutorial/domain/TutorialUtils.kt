@@ -1,4 +1,4 @@
-package xyz.sina.dowr.tutorial
+package xyz.sina.dowr.tutorial.domain
 
 import android.content.Context
 
