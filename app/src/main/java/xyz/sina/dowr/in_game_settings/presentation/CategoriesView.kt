@@ -6,6 +6,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -47,7 +48,7 @@ fun CategoriesView(wordCategories: WordCategories, position : Int ,onItemClick: 
             contentDescription = null
         )
         Text(
-            modifier = Modifier.padding(top = 5.dp),
+            modifier = Modifier.fillMaxWidth().padding(top = 5.dp),
             text = wordCategories.name,
             color = if (wordCategories.isSelected.value) Color.Red else Color.White,
             fontSize = 13.sp,
