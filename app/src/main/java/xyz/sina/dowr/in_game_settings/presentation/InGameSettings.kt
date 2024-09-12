@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -19,6 +20,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -36,7 +38,7 @@ import xyz.sina.dowr.core.navigation.InGame
 import xyz.sina.dowr.core.persentation.ButtonUI
 import xyz.sina.dowr.in_game_settings.data.Categories
 import xyz.sina.dowr.in_game_settings.data.DifficultySelectOption
-import xyz.sina.dowr.in_game_settings.data.WordCategories
+import xyz.sina.dowr.core.domain.InGameSettingsViewModel
 
 @Composable
 fun InGameSettingsScreen(
@@ -57,7 +59,8 @@ fun InGameSettingsScreen(
                         navController.navigate(
                             InGame(
                                 numberOfPlayer = inGameSettingViewModel.textFields.size,
-                                difficulty = inGameSettingViewModel.difficulty
+                                difficulty = inGameSettingViewModel.difficulty,
+                                time = inGameSettingViewModel.time
                             )
                         )
                     }) {
@@ -70,7 +73,6 @@ fun InGameSettingsScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(rememberScrollState())
                 .padding(innerPadding)
         ) {
             // for players to write their name and check if they want to randomise team or pick their teammates here based on their colors
@@ -79,7 +81,11 @@ fun InGameSettingsScreen(
                     text = "اضافه کردن بازیکن",
                     onClick = { inGameSettingViewModel.addTextField() })
             }
-            Column(modifier = Modifier.fillMaxWidth()) {
+            Column(modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .verticalScroll(rememberScrollState())
+                ) {
                 inGameSettingViewModel.textFields.forEachIndexed { index, text ->
 
                     val colorIndex = (index / 2) % colors.size
@@ -111,6 +117,7 @@ fun InGameSettingsScreen(
             Column(modifier = Modifier.fillMaxWidth()) {
                 OutlinedTextField(
                     modifier = Modifier.fillMaxWidth(),
+                    textStyle = TextStyle(color = MaterialTheme.colorScheme.onBackground),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                     value = inGameSettingViewModel.time.toString(),
                     onValueChange = inGameSettingViewModel::changeTime,
@@ -121,8 +128,8 @@ fun InGameSettingsScreen(
                 )
             }
             // categories of words and players word
+            PickWordCategories()
         }
-        PickWordCategories()
     }
 }
 
